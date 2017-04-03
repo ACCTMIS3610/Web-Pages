@@ -6,15 +6,32 @@ p {
   text-align: center;
   font-size: 60px;
 }
+.wrapper {
+    text-align: center;
+	
+}
+
+.button {
+    position: c;
+    top: 50%;
+}
+
+
 </style>
 </head>
 <body>
 
 <p id="demo"></p>
-<input type="button" id="bidder" value="Bid" onClick="alert('Bid!');" />
+
+<div class="wrapper">
+<input type="button" id="bidder" style="height: 50px; width: 150px" value="Bid" onClick="alert('Bid!');"/>
+
+</div>
 
 <script>
 // Set the date we're counting down to
+
+
 var countDownDate = new Date();
 var countMinutes = countDownDate.getMinutes()+1;
 countDownDate = countDownDate.setMinutes(countMinutes);
