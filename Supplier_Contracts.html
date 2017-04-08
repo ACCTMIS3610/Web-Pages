@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>Best Bid Energy </title>
@@ -10,26 +11,25 @@ header, footer {
     text-align: center;
 }
     </style>
-    <header>
-            <h1> Best Bid Energy</h1>
-    </header>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-    </head>
-<body>
-<div class="container">
-<br><br>
-  <ul class="list-inline">
+</head>
+<body> 
+    <header>
+            <h1> Best Bid Energy</h1>
+    </header>
+
+<ul class="nav nav-tabs">
+   <li><a href="#">Home</a></li>
     <li><a href="#">Profile</a></li>
-    <li><a href="#">Contracts</a></li>
+    <li class="active"><a href="#">Contracts</a></li>
     <li><a href="#">Auction</a></li>
   </ul>
     
-    
+<div class="container" >
       <h2>Contracts </h2> 
     <p> This is the Supplier/contracts page. Each supplier will have their own page. Here They will have the option of seeing Upcoming Contracts and Previous Contracts that the compay has won. There is also Tabs on the top of the page, which can be used to navigate to differnt pages.
     </p>
@@ -70,13 +70,13 @@ header, footer {
     </div>
     </div>
     </div>
-    
+
     
       <div class="panel-group" id="buyercontracts">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Contract Won </a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Contracts Won </a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse in">
@@ -106,10 +106,8 @@ header, footer {
     </div>
     </div>
     
-
-    
+        
 </div>
-    
 
     <footer><h3> Contact Info</h3>To contact us...
     </footer>
