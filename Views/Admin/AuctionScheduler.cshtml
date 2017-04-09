@@ -1,6 +1,23 @@
-﻿@{
+﻿<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+</head>
+
+<body>
+@{
     ViewBag.Title = "AuctionScheduler";
 }
+
+
 <h2>Scheduler Auction</h2>
 <ul class="nav nav-tabs">
     <li role="presentation"><a href="/Admin/Index">Home</a></li>
@@ -26,7 +43,7 @@
                <td> XYZ Company</td>
                <td> Betty</td>
                <td> DeRoss</td>
-                <td> <i style="font-size:24px" class="fa">&#xf274;</i></td>
+                <td> <input type="text" id="datepicker"></td>
                <td> 
                   <div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Time
@@ -63,3 +80,4 @@
     </form>
             
         </div>
+</body>
