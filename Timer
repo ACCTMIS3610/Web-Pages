@@ -4,12 +4,14 @@
 <style>
 p {
   text-align: center;
-  font-size: 60px;
+  font-size: 30px;
 }
+
 .wrapper {
     text-align: center;
 	
 }
+
 
 .button {
     position: c;
@@ -21,9 +23,22 @@ p {
 </head>
 <body>
 
+
+		
 <p id="demo"></p>
 
 <div class="wrapper">
+
+
+        <p>
+            <th> Last Bid    </th>
+        </p>
+            <p> 
+                <td> Enter Bid: </td> 
+        <td><input type="text" name="Bid"></p>
+    
+		
+
 <input type="button" id="bidder" style="height: 50px; width: 150px" value="Bid" onClick="alert('Bid!');"/>
 
 </div>
@@ -68,3 +83,4 @@ var x = setInterval(function() {
 
 </body>
 </html>
+
