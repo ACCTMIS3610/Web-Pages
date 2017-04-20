@@ -2,38 +2,34 @@
     ViewBag.Title = "Index";
 }
 <style>
-        td {
-     letter-spacing: 1px;
-     line-height: 1.5;
-     }
-     p {
-     letter-spacing: 1px;
-     line-height: 1.5;
-     font: 20;
- }</style>
+    table {
+    width: 30%;
+}
+td {
+    height: 30px;
+    width: 60%;
+    text-align: left;
+    text-indent: 10px;    
+    }
+    </style>
 
 <ul class="nav nav-tabs">
     <li role="presentation" class="active"><a href="/Suppliers/Index">Home</a></li>
     <li role="presentation"><a href="/Suppliers/Contracts">Contracts</a></li>
-    <li role="presentation"><a href="/Suppliers/Profile">Profile</a></li>
     <li role="presentation"><a href="/Suppliers/Auction">Auction</a></li>
 </ul>
-<div class="container">
-    <form>
-        <h2> Supplier Login</h2>
-    <table>
+    <div class="container">
+          <h2>Supplier Profile</h2>
+  <table>
         <tr> 
-            <td> Username </td>  
-            <td><input type="text" name="Username"></td>
+            <th class="text-right" >Name: </th>
+            <td>Supplier Name</td></tr>
         <tr>
-            <td> Password </td>
-        <td><input type="password" name="Password"></tr>      
+            <th class="text-right"> Company:</th>
+            <td>Company Name </td></tr>   
+        <tr> 
+            <th class="text-right">Account Number:</th>  
+                <td>Acct#</td>
+            </tr>
         </table>
-        <p>
-         Remember Me? <input type="radio" name="rememberMe" value="Yes" value= "No" checked> Yes
-        <input type="radio" name="rememberMe" value="No"> No<br>
-        <br><br>
-                <input type="submit" value="Sign In"> 
-       </p>
-        </form>
-</div>
+    </div>
