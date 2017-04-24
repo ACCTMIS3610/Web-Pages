@@ -1,31 +1,262 @@
-﻿@{
-    ViewBag.Title = "Auction";
+@{
+    ViewBag.Title = "Home Page";
 }
 
+
 <ul class="nav nav-tabs">
-    <li role="presentation"><a href="/Suppliers/Index">Home</a></li>
-    <li role="presentation"><a href="/Suppliers/Contracts">Contracts</a></li>
-    <li role="presentation" class="active"><a href="/Suppliers/Auction">Auction</a></li>
+
+    <li role="presentation">
+        <a href="/Suppliers/Index">Home</a>
+    </li>
+
+    <li role="presentation">
+        <a href="/Suppliers/Contracts">Contracts</a>
+    </li>
+
+    <li role="presentation"
+        class="active">
+        <a href="/Suppliers/Auction">Auction</a>
+    </li>
+
 </ul>
 
-<div class="container"> 
-     <h2> Supplier Auction</h2> 
-  <table class="table table-striped">
-        <tr> 
-            <th class="text-right"> Customer Name: </th>  
-            <td> Supplier Name</td>
-            <th class="text-right"> Monthly kWh Avg: </th>
-            <td> 2,0000</td> </tr>
+
+
+<div class="container">
+
+    <h2> Supplier Auction</h2>
+
+    <table class="table table-striped">
+
         <tr>
-            <th class="text-right"> Credit Score: </th>
-            <td> 800 </td>  
-            <th class="text-right"> Utility: </th> 
-            <td>Duke Energy</td></tr>
-         <tr>
-            <th class="text-right"> Account Number: </th>
-            <td> 812356780 </td>  
-            <th class="text-right"> Account Type: </th> 
-            <td>commercial</td></tr>
-        </table>
-      <br><br>
-      </div>
+
+            <th class="text-right">
+                Customer Name:
+            </th>
+
+            <td> Supplier Name</td>
+
+            <th class="text-right">
+                Monthly kWh Avg:
+            </th>
+
+            <td> 20,000</td>
+        </tr>
+
+        <tr>
+
+            <th class="text-right">
+                Credit Score:
+            </th>
+
+            <td>
+                800
+            </td>
+
+            <th class="text-right">
+                Utility:
+            </th>
+
+            <td>Duke Energy</td>
+        </tr>
+
+        <tr>
+
+            <th class="text-right">
+                Account Number:
+            </th>
+
+            <td>
+                812356780
+            </td>
+
+            <th class="text-right">
+                Account Type:
+            </th>
+
+            <td>commercial</td>
+        </tr>
+
+    </table>
+
+    <br><br>
+
+
+
+
+</div>
+
+
+
+<html>
+
+<head>
+
+    <style>
+        p {
+            text-align: center;
+            font-size: 30px;
+        }
+
+
+
+        .wrapper {
+            text-align: center;
+        }
+
+        .button {
+            position: c;
+            top: 50%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <p id="timer"></p>
+
+    <div class="wrapper">
+
+        <label id="LastBid"> Last Lowest Bid: </label> <label id="LastBidValue"/>
+        <br><br>
+    </div>
+
+        <!--
+
+        <th> Last Bid: @ViewBag.BestBid </th> <br>
+
+        -->
+
+    <div class="wrapper">
+        <label id="EnterBid">Enter Bid:</label>
+
+        @using (Html.BeginForm())
+
+            {
+
+            <form id="form" action="~/Controllers/Home/Index" method="post"
+                  onsubmit="return false;">
+
+
+                <input style="position:center; top:80%; left:5%; width:40%;"
+                       type="text"
+                       name="BidAuction"
+                       id="Auction" />
+                <br><br>
+
+                <input style="position:center; top:50%; left:5%; width:40%;"
+                       type="button"
+                       id="buttonBid"
+                       value="Submit"
+                       onclick="nextbid();" />
+
+            </form>
+
+        }
+
+
+    </div>
+        <!--
+                <input type="text" id="bidder"</input>
+
+                <button onclick="nextBid()">Submit</button>-->
+
+        <script type="text/javascript">
+
+            var input;
+            var count = 0;
+            var lastinput;
+
+
+            function nextbid() {
+
+                if(count == 0){
+                    input = document.getElementById("Auction").value;
+                    document.getElementById("LastBidValue").innerHTML = input;
+                    
+                }
+                else{
+                    input = document.getElementById("Auction").value;
+                    lastinput = document.getElementById("LastBidValue").innerText;
+                    if (input < lastinput) {
+                        document.getElementById("LastBidValue").innerHTML = input;
+                    }
+                    else {
+                        alert("Last lowest bid is: " + input + " \n**Please try again**")
+                        document.getElementById("LastBidValue").innerHTML = lastinput;
+                    }
+                }
+                count++;
+
+            }
+
+            // Set the date we're counting down to
+
+
+            var countDownDate = new Date();
+
+            var countMinutes = countDownDate.getMinutes() + 1;
+
+            countDownDate = countDownDate.setMinutes(countMinutes);
+
+
+
+            // Update the count down every 1 second
+
+            var x = setInterval(function () {
+
+
+
+                // Get todays date and time
+
+                var now = new Date().getTime();
+
+
+                // Find the distance between now an the count down date
+
+                var distance = countDownDate - now;
+
+
+                // Time calculations for days, hours, minutes and seconds
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+                // Output the result in an element with id="demo"
+
+                document.getElementById("timer").innerHTML =/*days + "d " + hours + "h "+*/ minutes + "m " + seconds + "s ";
+
+
+
+
+                // If the count down is over, write some text
+
+                if (distance < 0) {
+
+                    clearInterval(x);
+
+                    document.getElementById("timer").innerHTML = "EXPIRED";
+
+                    document.getElementById("buttonBid").setAttribute("style", "visibility:hidden");
+
+
+
+                }
+
+            }, 1000);
+            
+
+
+
+        </script>
+
+</body>
+
+</html>
